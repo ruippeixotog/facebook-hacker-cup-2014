@@ -1,8 +1,8 @@
 #include <algorithm>
 #include <iostream>
 #include <queue>
-#include <set>
 #include <utility>
+#include <vector>
 
 #define MAXN 30
 
@@ -36,13 +36,14 @@ int main() {
       in[1].push(out[1].front()); out[1].pop();
     }
 
-    set<string> names;
-    while(!in[0].empty()) { names.insert(players[in[0].front()].second.second); in[0].pop(); }
-    while(!in[1].empty()) { names.insert(players[in[1].front()].second.second); in[1].pop(); }
+    vector<string> names;
+    while(!in[0].empty()) { names.push_back(players[in[0].front()].second.second); in[0].pop(); }
+    while(!in[1].empty()) { names.push_back(players[in[1].front()].second.second); in[1].pop(); }
+    sort(names.begin(), names.end());
 
     cout << "Case #" << tc << ":";
-    for(set<string>::iterator it = names.begin(); it != names.end(); it++)
-      cout << " " << *it;
+    for(int i = 0; i < (int) names.size(); i++)
+      cout << " " << names[i];
     cout << endl;
   }
   return 0;
