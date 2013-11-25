@@ -24,8 +24,8 @@ The following is the list of the problems solved. Each problem id is specified b
 
 ### Qualification Round
 
-* ? [20: Square Detector][qual1] (`square-detector`)
-* ? [35: Basketball Game][qual2] (`basketball-game`)
+* ✓ [20: Square Detector][qual1] (`square-detector`)
+* ✗ [35: Basketball Game][qual2] (`basketball-game`)
 * ✗ [45: Tennison][qual3] (`tennison`)
 
 [1]: https://www.facebook.com/hackercup
