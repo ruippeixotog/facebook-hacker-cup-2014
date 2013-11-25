@@ -1,7 +1,5 @@
 #include <algorithm>
 #include <iostream>
-#include <queue>
-#include <utility>
 #include <vector>
 
 #define MAXN 30
@@ -24,21 +22,21 @@ int main() {
       players[i].second.first = -players[i].second.first;
     }
     sort(players, players + n);
-
-    queue<int> in[2], out[2];
-    for(int i = 2 * p - 1; i >= 0; i--) in[i % 2].push(i);
-    for(int i = 2 * p; i < n; i++) out[i % 2].push(i);
-
-    for(int i = 0; i < m; i++) {
-      out[0].push(in[0].front()); in[0].pop();
-      in[0].push(out[0].front()); out[0].pop();
-      out[1].push(in[1].front()); in[1].pop();
-      in[1].push(out[1].front()); out[1].pop();
+    for(int i = 0; i < p / 2; i++) {
+      swap(players[i * 2], players[(p - i - 1) * 2]);
+      swap(players[i * 2 + 1], players[(p - i - 1) * 2 + 1]);
     }
 
+    int rotA = (2 * m) % (n % 2 == 0 ? n : n + 1);
+    int rotB = (2 * m + 1) % (n % 2 == 0 ? n : n - 1);
+
     vector<string> names;
-    while(!in[0].empty()) { names.push_back(players[in[0].front()].second.second); in[0].pop(); }
-    while(!in[1].empty()) { names.push_back(players[in[1].front()].second.second); in[1].pop(); }
+    while(p--) {
+      names.push_back(players[rotA].second.second);
+      rotA = (rotA + 2) % (n % 2 == 0 ? n : n + 1);
+      names.push_back(players[rotB].second.second);
+      rotB = (rotB + 2) % (n % 2 == 0 ? n : n - 1);
+    }
     sort(names.begin(), names.end());
 
     cout << "Case #" << tc << ":";
