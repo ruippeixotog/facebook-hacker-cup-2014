@@ -4,11 +4,9 @@
 
 #define MAXN 30
 
-#define Player pair<int, pair<int, string> >
-
 using namespace std;
 
-Player players[MAXN];
+pair<int, pair<int, string> > players[MAXN];
 
 int main() {
   int t; cin >> t;
@@ -33,8 +31,8 @@ int main() {
     vector<string> names;
     while(p--) {
       names.push_back(players[rotA].second.second);
-      rotA = (rotA + 2) % (n % 2 == 0 ? n : n + 1);
       names.push_back(players[rotB].second.second);
+      rotA = (rotA + 2) % (n % 2 == 0 ? n : n + 1);
       rotB = (rotB + 2) % (n % 2 == 0 ? n : n - 1);
     }
     sort(names.begin(), names.end());
