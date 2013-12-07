@@ -35,6 +35,7 @@ The following is the list of the problems solved. Each problem id is specified b
 ### Qualification Round
 
 * ? [15: Labelmaker][round11] (`labelmaker`)
+* ? [20: Coins Game][round12] (`coins-game`)
 
 [1]: https://www.facebook.com/hackercup
 [2]: http://www.scala-lang.org
@@ -42,3 +43,5 @@ The following is the list of the problems solved. Each problem id is specified b
 [qual1]: https://www.facebook.com/hackercup/problems.php?pid=318555664954399&round=598486203541358
 [qual2]: https://www.facebook.com/hackercup/problems.php?pid=740733162607577&round=598486203541358
 [qual3]: https://www.facebook.com/hackercup/problems.php?pid=373965339404375&round=598486203541358
+[round11]: https://www.facebook.com/hackercup/problems.php?pid=637270059647812&round=1437956993099239
+[round12]: https://www.facebook.com/hackercup/problems.php?pid=105395349584705&round=1437956993099239
