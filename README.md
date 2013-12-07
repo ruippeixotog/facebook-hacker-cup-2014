@@ -32,6 +32,10 @@ The following is the list of the problems solved. Each problem id is specified b
 * ✓ [35: Basketball Game][qual2] (`basketball-game`)
 * ✓ [45: Tennison][qual3] (`tennison`) [only Scala version is correct]
 
+### Qualification Round
+
+* ? [15: Labelmaker][round11] (`labelmaker`)
+
 [1]: https://www.facebook.com/hackercup
 [2]: http://www.scala-lang.org
 [3]: http://www.scala-sbt.org
