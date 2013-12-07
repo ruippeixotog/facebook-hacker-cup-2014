@@ -5,6 +5,8 @@
 #define MAXN 500
 #define MAXM 500
 
+#define INF 0x3f3f3f3f
+
 using namespace std;
 
 char grid[MAXN][MAXM];
@@ -25,9 +27,10 @@ int main() {
 
     for(int i = 0; i < n; i++) {
       for(int j = 0; j < m; j++) {
-        if(grid[i][j] == '#' || to[i][j] <= 0) continue;
-        if(i < n - 1) to[i + 1][j] = max(to[i + 1][j], to[i][j] + 1);
-        if(j < m - 1) to[i][j + 1] = max(to[i][j + 1], to[i][j] + 1);
+        if(grid[i][j] == '#' || to[i][j] > 0) continue;
+        to[i][j] = max(
+          i == 0 ? -INF : to[i - 1][j],
+          j == 0 ? -INF : to[i][j - 1]) + 1;
       }
     }
 
@@ -40,15 +43,14 @@ int main() {
     //   cerr << endl;
     // }
 
-    memset(from, 0, sizeof(from));
+    memset(from, -0x3f, sizeof(from));
 
     for(int i = n - 1; i >= 0; i--) {
       for(int j = m - 1; j >= 0; j--) {
         if(grid[i][j] == '#') continue;
-        if(!from[i][j]) from[i][j] = 1;
-
-        if(i > 0) from[i - 1][j] = max(from[i - 1][j], from[i][j] + 1);
-        if(j > 0) from[i][j - 1] = max(from[i][j - 1], from[i][j] + 1);
+        from[i][j] = max(1, max(
+          i == n - 1 ? -INF : from[i + 1][j],
+          j == m - 1 ? -INF : from[i][j + 1]) + 1);
       }
     }
 
@@ -67,21 +69,18 @@ int main() {
         if(grid[i][j] == '#') continue;
         maxQueue = max(maxQueue, to[i][j]);
 
-        if(j < m - 2) {
-          // queue up from (i, j + 1) to (i - k, j + 1)
-          for(int k = 0; k <= i && grid[i - k][j + 1] != '#'; k++) {
-            maxQueue = max(maxQueue,
-              to[i][j] + k + 1 +
-              (grid[i - k][j + 2] == '#' ? 0 : from[i - k][j + 2]));
-          }
+        // queue upwards from (i, j) to (i - k, j)
+        for(int k = 0; k <= i && grid[i - k][j] != '#'; k++) {
+          int before = (j == 0 ? -INF : to[i][j - 1]);
+          int after = (j == m - 1 ? 0 : max(0, from[i - k][j + 1]));
+          maxQueue = max(maxQueue, before + k + 1 + after);
         }
-        if(i < n - 2) {
-          // queue left from (i + 1, j) to (i + 1, j - k)
-          for(int k = 0; k <= j && grid[i + 1][j - k] != '#'; k++) {
-            maxQueue = max(maxQueue,
-              to[i][j] + k + 1 +
-              (grid[i + 2][j - k] == '#'? 0 : from[i + 2][j - k]));
-          }
+
+        // queue leftwards from (i, j) to (i, j - k)
+        for(int k = 0; k <= j && grid[i][j - k] != '#'; k++) {
+          int before = (i == 0 ? -INF : to[i - 1][j]);
+          int after = (i == n - 1 ? 0 : max(0, from[i + 1][j - k]));
+          maxQueue = max(maxQueue, before + k + 1 + after);
         }
       }
     }
