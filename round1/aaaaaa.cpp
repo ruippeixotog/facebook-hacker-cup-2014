@@ -34,15 +34,6 @@ int main() {
       }
     }
 
-    // cerr << "TO" << endl;
-    // for(int i = 0; i < n; i++) {
-    //   for(int j = 0; j < m; j++) {
-    //     if(grid[i][j] == '#') cerr << "# ";
-    //     else cerr << to[i][j] << " ";
-    //   }
-    //   cerr << endl;
-    // }
-
     memset(from, -0x3f, sizeof(from));
 
     for(int i = n - 1; i >= 0; i--) {
@@ -53,15 +44,6 @@ int main() {
           j == m - 1 ? -INF : from[i][j + 1]) + 1);
       }
     }
-
-    // cerr << "FROM" << endl;
-    // for(int i = 0; i < n; i++) {
-    //   for(int j = 0; j < m; j++) {
-    //     if(grid[i][j] == '#') cerr << "# ";
-    //     else cerr << from[i][j] << " ";
-    //   }
-    //   cerr << endl;
-    // }
 
     int maxQueue = 0;
     for(int i = 0; i < n; i++) {
