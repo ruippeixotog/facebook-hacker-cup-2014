@@ -37,6 +37,7 @@ The following is the list of the problems solved. Each problem id is specified b
 * ? [15: Labelmaker][round11] (`labelmaker`)
 * ? [20: Coins Game][round12] (`coins-game`)
 * ? [25: AAAAAA][round13] (`aaaaaa`)
+* ✗ [40: Preventing Alzheimer's][round14] (`preventing-alzheimers`)
 
 [1]: https://www.facebook.com/hackercup
 [2]: http://www.scala-lang.org
@@ -47,3 +48,4 @@ The following is the list of the problems solved. Each problem id is specified b
 [round11]: https://www.facebook.com/hackercup/problems.php?pid=637270059647812&round=1437956993099239
 [round12]: https://www.facebook.com/hackercup/problems.php?pid=105395349584705&round=1437956993099239
 [round13]: https://www.facebook.com/hackercup/problems.php?pid=184326661771870&round=1437956993099239
+[round14]: https://www.facebook.com/hackercup/problems.php?pid=1420024724897316&round=1437956993099239
