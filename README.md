@@ -32,12 +32,16 @@ The following is the list of the problems solved. Each problem id is specified b
 * ✓ [35: Basketball Game][qual2] (`basketball-game`)
 * ✓ [45: Tennison][qual3] (`tennison`) [only the Scala version has the required precision]
 
-### Qualification Round
+### Round 1
 
 * ✓ [15: Labelmaker][round11] (`labelmaker`)
 * ✗ [20: Coins Game][round12] (`coins-game`)
 * ✓ [25: AAAAAA][round13] (`aaaaaa`)
 * ✗ [40: Preventing Alzheimer's][round14] (`preventing-alzheimers`)
+
+### Round 2
+
+* ✗ [25: Magic Pairs][round21] (`magic-pairs`)
 
 [1]: https://www.facebook.com/hackercup
 [2]: http://www.scala-lang.org
@@ -49,3 +53,4 @@ The following is the list of the problems solved. Each problem id is specified b
 [round12]: https://www.facebook.com/hackercup/problems.php?pid=105395349584705&round=1437956993099239
 [round13]: https://www.facebook.com/hackercup/problems.php?pid=184326661771870&round=1437956993099239
 [round14]: https://www.facebook.com/hackercup/problems.php?pid=1420024724897316&round=1437956993099239
+[round21]: https://www.facebook.com/hackercup/problems.php?pid=620734011349888&round=544142832342014
