@@ -35,7 +35,7 @@ The following is the list of the problems solved. Each problem identifier is spe
 ### Round 1
 
 * ✓ [15: Labelmaker][round11] (`labelmaker`)
-* ✗ [20: Coins Game][round12] (`coins-game`)
+* ✓ [20: Coins Game][round12] (`coins-game`)
 * ✓ [25: AAAAAA][round13] (`aaaaaa`)
 * ✗ [40: Preventing Alzheimer's][round14] (`preventing-alzheimers`)
 

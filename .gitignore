@@ -1,7 +1,8 @@
-*~
+*
+!/**/
+!*.*
+
+!Makefile
 *.in
 *.out
 *.exe
-.idea
-.idea_modules
-target
