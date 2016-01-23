@@ -12,8 +12,8 @@
 using namespace std;
 
 int n, m;
-int x1, a1, b1, c1, r1;
-int x2, a2, b2, c2, r2;
+ll x1, a1, b1, c1, r1;
+ll x2, a2, b2, c2, r2;
 
 int board1[MAXN], board2[MAXM];
 
@@ -50,16 +50,6 @@ int main() {
 
     gen();
 
-    // for(int i = 0; i < n; i++) {
-    //   cerr << board1[i] << " "; 
-    // }
-    // cerr << endl;
-
-    // for(int i = 0; i < m; i++) {
-    //   cerr << board2[i] << " "; 
-    // }
-    // cerr << endl;
-
     ll count = 0;
     int seenSize1 = 0;
     set<int> seen2;
@@ -67,7 +57,6 @@ int main() {
     for(int i1 = 0, i2 = 0; i1 < n; i1++) {
       if(board1[i1] == -1) continue;
 
-      // cerr << "i1 = " << i1 << ", i2 = " << i2 << endl;
       int pairs = 0;
 
       seenSize1++;
@@ -81,13 +70,11 @@ int main() {
       if(seenSize1 == (int) seen2.size()) {
         pairs++;
         while(i2 < m && board2[i2] == -1) { pairs++; i2++; }
-        // cerr << "pairs are " << pairs << endl;
 
         count += pairs;
         i1++;
         while(i1 < n && board1[i1] == -1) {
           count += pairs; i1++;
-          // cerr << "pairs are " << pairs << endl;
         }
         i1--;
       }
